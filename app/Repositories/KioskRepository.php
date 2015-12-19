@@ -19,4 +19,9 @@ class KioskRepository
             ->where('secret', $secret)
             ->first();
     }
+
+    public function findByUid($uid)
+    {
+        return Kiosk::where('uid', $uid)->first();
+    }
 }

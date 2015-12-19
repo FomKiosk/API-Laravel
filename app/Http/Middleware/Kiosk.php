@@ -27,15 +27,19 @@ class Kiosk
      */
     public function handle($request, Closure $next)
     {
-        $uid = $request->get('uid');
-        $secret = $request->get('secret');
+        $kiosk = $this->kioskRepository->findByUid($request->get('uid'));
+        $token = $request->get('token');
+        $values = $request->except('token');
 
-        $kiosk = $this->kioskRepository->findByUidAndSecret($uid, $secret);
+        $values = json_encode($values) . $kiosk->secret;
 
-        if($kiosk) {
+        $md5 = md5($values);
+
+        if($md5 == $token) {
             return $next($request);
         }
-        
-        return ['success' => false];
+
+        return response()->json(['success' => false]);
+
     }
 }
