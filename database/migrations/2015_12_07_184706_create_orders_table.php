@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->integer('kiosk_id')->unsigned();
             $table->timestamp('finished')->nullable();
             $table->timestamps();
-            $table->integer('participant_id');
+            $table->integer('participant_id')->unsigned()->nullable();
 
             $table->foreign('kiosk_id')->references('id')->on('kiosks')->onDelete('cascade');
             $table->foreign('participant_id')->references('id')->on('participants')->onDelete('cascade');

@@ -1,7 +1,7 @@
 <?php
 
-use App\Product;
-use App\Station;
+use App\Models\Product;
+use App\Models\Station;
 use Illuminate\Database\Seeder;
 
 // composer require laracasts/testdummy

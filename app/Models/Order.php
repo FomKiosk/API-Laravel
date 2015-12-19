@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+
+    protected $fillable = ['kiosk_id', 'finished', 'participant_id'];
     /**
      * Retrieve the participant from this order (can be null)
      *

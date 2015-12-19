@@ -32,6 +32,16 @@ class OrdersController extends Controller
     {
         $orders = $this->orderRepository->all();
 
-        return $orders;
+        return response()->json($orders, 200);
+    }
+
+    public function store(Request $request)
+    {
+        $order_data = json_decode($request->get('products'));
+        $kiosk_id = 1;
+        $participant_id = 1;
+
+        $order = $this->orderRepository->create($kiosk_id, $participant_id, $order_data->products);
+        return ["order" => $order->id];
     }
 }

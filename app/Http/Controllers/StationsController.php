@@ -32,6 +32,6 @@ class StationsController extends Controller
     {
         $stations = $this->stationRepository->getStationsWithProducts();
 
-        return $stations;
+        return response()->json($stations, 200);
     }
 }

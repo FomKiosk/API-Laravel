@@ -33,6 +33,7 @@ class ProductsController extends Controller
     {
         $products = $this->productRepository->getProductsOrderedByCategory();
 
-        return $products;
+        return response()->json($products, 200);
     }
+
 }
