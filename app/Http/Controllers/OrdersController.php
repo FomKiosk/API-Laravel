@@ -2,14 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Order;
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\OrderRepository;
 
 class OrdersController extends Controller
 {
+    /**
+     * @var OrderRepository
+     */
+    protected $orderRepository;
+
+    /**
+     * OrdersController constructor.
+     * @param OrderRepository $orderRepository
+     */
+    public function __construct(OrderRepository $orderRepository)
+    {
+        $this->orderRepository = $orderRepository;
+    }
+
     /**
      * Return all the orders with their products and price/amount at given time
      *
@@ -17,15 +30,8 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        return Order::with(['products' => function($query) {
-            $query->select([
-                'id',
-                'name',
-                'price',
-                'pivot.price',
-                'pivot.amount'
-            ]);
-            $query->orderBy('sort');
-        }])->get();
+        $orders = $this->orderRepository->all();
+
+        return $orders;
     }
 }

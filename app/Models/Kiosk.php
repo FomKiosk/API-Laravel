@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,7 +14,7 @@ class Kiosk extends Model
      */
     public function type()
     {
-        return $this->belongsTo('App\Type');
+        return $this->belongsTo('App\Models\Type');
     }
     /**
      * Get all orders created by this kiosk
@@ -23,6 +23,6 @@ class Kiosk extends Model
      */
     public function orders()
     {
-        return $this->hasMany('App\Order');
+        return $this->hasMany('App\Models\Order');
     }
 }

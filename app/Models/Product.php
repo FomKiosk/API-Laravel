@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,7 +23,7 @@ class Product extends Model
      */
     public function category()
     {
-        return $this->belongsTo('App\Category');
+        return $this->belongsTo('App\Models\Category');
     }
 
     /**
@@ -32,7 +32,7 @@ class Product extends Model
      */
     public function stations()
     {
-        return $this->belongsToMany('App\Station');
+        return $this->belongsToMany('App\Models\Station');
     }
 
     /**
@@ -42,7 +42,7 @@ class Product extends Model
      */
     public function orders()
     {
-        return $this->belongsToMany('App\Order');
+        return $this->belongsToMany('App\Models\Order');
     }
 
     /**

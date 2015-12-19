@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,7 +27,7 @@ class Station extends Model
      */
     public function products()
     {
-        return $this->belongsToMany('App\Product');
+        return $this->belongsToMany('App\Models\Product');
     }
 
     /**
@@ -37,6 +37,6 @@ class Station extends Model
      */
     public function type()
     {
-        return $this->hasOne('App\Type');
+        return $this->hasOne('App\Models\Type');
     }
 }

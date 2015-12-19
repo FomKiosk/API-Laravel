@@ -1,11 +1,20 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    /**
+     * Retrieve the participant from this order (can be null)
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function participant()
+    {
+        return $this->belongsTo('App\Models\Participant');
+    }
 
     /**
      * Get the kiosk for this order
@@ -14,7 +23,7 @@ class Order extends Model
      */
     public function kiosk()
     {
-        return $this->belongsTo('App\Kiosk');
+        return $this->belongsTo('App\Models\Kiosk');
     }
 
     /**
@@ -25,6 +34,6 @@ class Order extends Model
      */
     public function products()
     {
-        return $this->belongsToMany('App\Product');
+        return $this->belongsToMany('App\Models\Product');
     }
 }

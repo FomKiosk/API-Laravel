@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test', 'ProductsController@test');
-
 /**
  * Api Routes
  */
@@ -27,5 +25,4 @@ Route::group(['prefix' => 'api/v1'], function() {
     Route::get('stations', 'StationsController@index');
 
     Route::get('orders', 'OrdersController@index');
-
 });

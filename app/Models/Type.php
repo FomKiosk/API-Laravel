@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +13,7 @@ class Type extends Model
      */
     public function kiosks()
     {
-        return $this->hasMany('App\Kiosk');
+        return $this->hasMany('App\Models\Kiosk');
     }
 
     /**
@@ -23,6 +23,6 @@ class Type extends Model
      */
     public function stations()
     {
-        return $this->hasMany('App\Station');
+        return $this->hasMany('App\Models\Station');
     }
 }
