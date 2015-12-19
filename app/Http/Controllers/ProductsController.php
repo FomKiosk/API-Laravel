@@ -36,4 +36,22 @@ class ProductsController extends Controller
         return response()->json($products, 200);
     }
 
+    /**
+     * Put a product visible or invisible
+     *
+     * @param $id
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function update($id, Request $request)
+    {
+        $product = $this->productRepository->updateVisibility($id, $request->get('visible'));
+//        if($request->get('visible')) {
+//            $product = $this->productRepository->updateVisibility($id, true);
+//        } else {
+//            $product = $this->productRepository->updateVisibility($id, false);
+//        }
+        return response()->json($product, 200);
+    }
+
 }

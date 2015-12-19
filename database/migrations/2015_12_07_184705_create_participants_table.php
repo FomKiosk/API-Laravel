@@ -17,6 +17,7 @@ class CreateParticipantsTable extends Migration
             $table->string('barcode');
             $table->string('name');
             $table->string('image');
+            $table->boolean('crew');
             $table->timestamps();
         });
     }

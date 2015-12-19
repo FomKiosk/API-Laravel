@@ -6,8 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    /**
+     * These dates will not be returned as carbon values
+     * @var array
+     */
+    protected $dates = ['finished', 'created_at', 'updated_at'];
 
+    /**
+     * @var array
+     */
     protected $fillable = ['kiosk_id', 'finished', 'participant_id'];
+
     /**
      * Retrieve the participant from this order (can be null)
      *
@@ -36,6 +45,6 @@ class Order extends Model
      */
     public function products()
     {
-        return $this->belongsToMany('App\Models\Product');
+        return $this->belongsToMany('App\Models\Product')->withPivot('amount', 'price');
     }
 }

@@ -13,7 +13,6 @@ class Product extends Model
         'category_id',
         'created_at',
         'updated_at',
-        'pivot'
     ];
 
     /**

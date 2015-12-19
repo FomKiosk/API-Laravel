@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Category;
+use App\Models\Product;
 
 class ProductRepository
 {
@@ -25,5 +26,20 @@ class ProductRepository
             ]);
             $q->orderBy('sort');
         }])->orderBy('sort')->get();
+    }
+
+    /**
+     * Update the visibility of a product
+     *
+     * @param $id
+     * @param $visible
+     * @return mixed
+     */
+    public function updateVisibility($id, $visible)
+    {
+        $product = Product::find($id);
+        $product->visible = $visible;
+        $product->save();
+        return $product;
     }
 }
