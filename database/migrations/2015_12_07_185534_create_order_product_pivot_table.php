@@ -13,17 +13,15 @@ class CreateOrderProductPivotTable extends Migration
     public function up()
     {
         Schema::create('order_product', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('order_id')->unsigned()->index();
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->integer('product_id')->unsigned()->index();
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->primary(['order_id', 'product_id']);
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');;
 
             $table->decimal('price');
+            $table->decimal('discount');
             $table->integer('amount');
-            $table->integer('product_id_sub')->nullable()->unsigned();
-
-            $table->foreign('product_id_sub')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

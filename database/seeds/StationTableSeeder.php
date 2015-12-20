@@ -14,7 +14,7 @@ class StationTableSeeder extends Seeder
         $station = Station::create([
             'name' => 'Pizza Oven',
             'color' => 'D4B46A',
-            'type_id' => 1,
+            'kiosktype_id' => 1,
         ]);
 
         $product = Product::find(6);

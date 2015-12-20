@@ -4,8 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Type extends Model
+class KioskType extends Model
 {
+    protected $table = 'kiosktypes';
     /**
      * Get all the kiosk with a certain type
      *

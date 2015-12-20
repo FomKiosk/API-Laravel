@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Type;
+use App\Models\KioskType;
 use Illuminate\Database\Seeder;
 
 // composer require laracasts/testdummy
@@ -10,14 +10,17 @@ class TypeTableSeeder extends Seeder
 {
     public function run()
     {
-        Type::create([
+        KioskType::create([
             'name' => 'Kitchen',
+            'kitchen_id' => 1,
         ]);
-        Type::create([
+        KioskType::create([
             'name'  => 'Friteuse',
+            'kitchen_id' => 1,
         ]);
-        Type::create([
+        KioskType::create([
             'name' => 'Kiosk',
+            'kitchen_id' => 1,
         ]);
     }
 }

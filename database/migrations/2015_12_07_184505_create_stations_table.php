@@ -14,12 +14,12 @@ class CreateStationsTable extends Migration
     {
         Schema::create('stations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('type_id')->unsigned();
+            $table->integer('kiosktype_id')->unsigned();
             $table->string('name');
             $table->string('color');
             $table->timestamps();
 
-            $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
+            $table->foreign('kiosktype_id')->references('id')->on('kiosktypes')->onDelete('cascade');
         });
     }
 

@@ -12,7 +12,7 @@ class KioskTableSeeder extends Seeder
     public function run()
     {
         \App\Models\Kiosk::create([
-            'type_id' => 3,
+            'kiosktype_id' => 3,
             'name' => 'Kisok One',
             'uid' => 1,
             'secret' => 1,

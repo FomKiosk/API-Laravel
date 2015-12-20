@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTypesTable extends Migration
+class CreateKiosktypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,13 @@ class CreateTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('types', function (Blueprint $table) {
+        Schema::create('kiosktypes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->integer('kitchen_id')->unsigned();
             $table->timestamps();
+
+            $table->foreign('kitchen_id')->references('id')->on('kitchens')->onDelete('cascade');
         });
     }
 
@@ -26,6 +29,6 @@ class CreateTypesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('types');
+        Schema::drop('kiosktypes');
     }
 }

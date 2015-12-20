@@ -19,11 +19,10 @@ class CreateProductsTable extends Migration
             $table->decimal('price');
             $table->boolean('visible');
             $table->integer('sort');
-            $table->integer('category_id_sub')->nullable()->unsigned();
+            $table->boolean('instant_sale');
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('category_id_sub')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

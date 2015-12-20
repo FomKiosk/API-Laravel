@@ -2,7 +2,7 @@
 
 Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function() {
 
-    Route::group(['middleware' => 'kiosk'], function() {
+    Route::group(['middleware' => []], function() {
 
         Route::post('check', 'CheckController@check');
 

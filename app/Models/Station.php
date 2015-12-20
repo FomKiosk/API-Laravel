@@ -35,8 +35,8 @@ class Station extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function type()
+    public function kioskType()
     {
-        return $this->hasOne('App\Models\Type');
+        return $this->hasOne('App\Models\KioskType');
     }
 }

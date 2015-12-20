@@ -12,9 +12,9 @@ class Kiosk extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function type()
+    public function kioskType()
     {
-        return $this->belongsTo('App\Models\Type');
+        return $this->belongsTo('App\Models\KioskType');
     }
     /**
      * Get all orders created by this kiosk

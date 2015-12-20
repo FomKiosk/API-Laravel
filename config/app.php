@@ -146,6 +146,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         'Barryvdh\Cors\ServiceProvider',
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
