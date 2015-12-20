@@ -1,2 +1,7 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "resources/assets/vendor/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
+body {
+  .content {
+    margin-top: 70px;
+  }
+}

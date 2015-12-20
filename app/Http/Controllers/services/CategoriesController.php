@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Services;
 
 use App\Repositories\CategoryRepository;
 use Illuminate\Http\Request;

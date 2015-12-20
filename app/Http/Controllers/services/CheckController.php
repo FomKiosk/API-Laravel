@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Services;
 
 use App\Models\Kiosk;
 use Illuminate\Http\Request;

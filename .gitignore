@@ -6,3 +6,4 @@ Homestead.json
 .idea/
 composer.lock
 packages/
+/resources/assets/vendor
