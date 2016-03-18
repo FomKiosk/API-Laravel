@@ -22,6 +22,6 @@ Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function() {
 
         Route::post('categories/{id}/visible', 'CategoriesController@update');
 
-        Route::post('products/{id}/visible', 'CategoriesController@update');
+        Route::post('products/{id}/visible', 'ProductsController@update');
     });
 });

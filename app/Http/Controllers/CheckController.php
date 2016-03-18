@@ -12,7 +12,7 @@ class CheckController extends Controller
 {
     public function check(Request $request)
     {
-        $kiosk = Kiosk::where('uid', $request->get('uid'))->where('secret', $request->get('secret'))->first();
+        $kiosk = Kiosk::where('uid', $request->get('uid'))->first();
         return response()->json([
             'success' => true,
             'kiosk_id' => $kiosk->id
